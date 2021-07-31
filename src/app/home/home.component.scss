@@ -1,0 +1,12 @@
+@import '../../sass/_variables';
+@import '../../sass/_mixins';
+.cls-div-home {
+    background: $blanco;
+    margin-top: $margin-top-home;
+}
+
+@media (min-width: 1200px) {
+    .cls-div-home {
+        margin-top: $margin-top-home-respon;
+    }
+}
