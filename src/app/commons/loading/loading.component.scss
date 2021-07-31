@@ -1,0 +1,18 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.clsLoading {
+    @include position($position-fixed);
+    top: $min;
+    left: $min;
+    width: $max;
+    height: $max;
+    @include text-align($text-align-center);
+    @include background($blanco, $opacity-ceroocho);
+    @include z-index($z-index-uno);
+    & img {
+        @include position($position-relative);
+        top: $top-imagen;
+        height: $tam-imagen;
+        width: $tam-imagen;
+    }
+}
