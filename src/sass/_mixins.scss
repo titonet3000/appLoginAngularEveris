@@ -1,0 +1,33 @@
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin position($position) {
+    position: $position;
+}
+
+@mixin text-align($text-align) {
+    text-align: $text-align;
+}
+
+@mixin background($color, $opacity) {
+    background-color: rgba($color, $opacity);
+}
+
+@mixin font-style($font-style) {
+    font-style: $font-style;
+}
+
+@mixin font-weight($font-weight) {
+    font-weight: $font-weight;
+}
+
+@mixin z-index($valor) {
+    z-index: $valor;
+}
+
+@mixin visibility($visibility) {
+    visibility: $visibility;
+}
