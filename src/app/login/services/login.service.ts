@@ -13,6 +13,7 @@ export class LoginService {
     return 'https://rpeas01dwcatalogoeess02.azurewebsites.net/usuario';
   }
 
+  //user:Repsol01 //pass: Catalogo01
   private token: any
 
   constructor(private http:HttpClient) { }
