@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginResponse } from './models/login-response';
 import { UserLogin } from './models/user-login';
+import { AuthService } from './services/auth.service';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +17,47 @@ export class LoginComponent implements OnInit {
   loading:boolean = false
   loginResponse:LoginResponse = new LoginResponse()
   
-  constructor(private router:Router) { }
+  constructor(private auth:AuthService, private login:LoginService, private router:Router) { }
 
   ngOnInit(): void {
+    this.auth.logout()
+    this.getToken()
+  }
+
+  getToken(){
+
+    this.auth.getToken().subscribe( token => {
+      console.log("token:", token)
+      sessionStorage.setItem('token', token);
+    })
   }
 
   acceso(){
 
+    console.log(this.user);
+
+    this.loading = true
+
+    this.login.validarUsuario(this.user).subscribe( data =>{
+
+      console.log("acceso:", data)
+
+      this.loginResponse = data
+
+      if(this.loginResponse.OK){
+
+        sessionStorage.setItem('currentUser', JSON.stringify(this.loginResponse));
+        sessionStorage.setItem(this.loginResponse.NOMBRE_EMP, JSON.stringify(this.loginResponse.NOMBRE_EMP));
+        this.router.navigate(["/home"])
+
+
+      }else {
+        this.alerta = true
+        this.loading = false
+      }
+
+    })
+    
   }
 
 }
