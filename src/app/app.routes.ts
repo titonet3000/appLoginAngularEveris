@@ -8,7 +8,7 @@ import { LoginComponent } from "./login/login.component";
 export const AppRoutes: Routes = [
 
     {
-        path: "", component:HomeComponent, canActivateChild: [ChildGuard],
+        path: "", component:HomeComponent, canActivate: [AuthGuard],
         children: [
 
             { path: "", component: BienvenidoComponent }, 
@@ -16,6 +16,11 @@ export const AppRoutes: Routes = [
                 path: 'conocenos',
                
                 loadChildren: () => import('./conocenos/conocenos.module').then(m => m.ConocenosModule)
+            },
+            {
+                path: 'customer',
+               
+                loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
             }
 
         ]
