@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../home-search/services/search.service';
 
 @Component({
   selector: 'app-home-menu',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searchService:SearchService) { }
 
   ngOnInit(): void {
   }
 
   buscar(){
+    this.searchService.setSearh(true);
   }
 
 }

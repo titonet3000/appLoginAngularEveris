@@ -1,0 +1,65 @@
+@import '../../../../sass/_variables';
+@import '../../../../sass/_mixins';
+.cls-div-fondo-buscar {
+    @include position($position-fixed);
+    top: $min;
+    left: $min;
+    @include z-index($z-index-cuatronueve);
+    @include background($negro, $opacity-cerocinco);
+    width: $max;
+    height: $max;
+}
+
+.cls-div-form-buscar {
+    @include position($position-relative);
+    top: $top-buscar;
+    background-color: $blanco;
+    width: $max;
+    height: $height-buscar;
+    padding: $padding-buscar;
+}
+
+.visible {
+    @include visibility($visibility-visible);
+    opacity: $opacity-uno;
+    -webkit-transition: opacity 2s linear;
+    -moz-transition: opacity 2s linear;
+    -o-transition: opacity 2s linear;
+    transition: opacity 0.5s linear;
+}
+
+.hidden {
+    @include visibility($visibility-hidden);
+    opacity: $opacity-cero;
+    -webkit-transition: visibility 0s 2s, opacity 2s linear;
+    -moz-transition: visibility 0s 2s, opacity 2s linear;
+    -o-transition: visibility 0s 2s, opacity 2s linear;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+.icon-close {
+    font-size: $font-size-buscar;
+    color: $color-principal;
+}
+
+.icon-search {
+    color: $color-principal;
+}
+
+.btn-primary {
+    background-color: $color-principal;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .cls-div-form-buscar {
+        @include position($position-relative);
+        top: $top-tablet-buscar;
+    }
+}
+
+@media (max-width: 992px) {
+    .cls-div-form-buscar {
+        @include position($position-relative);
+        top: $top-movil-buscar;
+    }
+}

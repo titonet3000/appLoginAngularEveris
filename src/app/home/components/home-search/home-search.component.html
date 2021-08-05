@@ -1,1 +1,41 @@
-<p>home-search works!</p>
+<div id="divBuscar" class="cls-div-fondo-buscar " [ngClass]="!showBuscar? 'hidden':'visible'">
+
+
+    <div class="container">
+        <div class="cls-div-form-buscar">
+
+            <div class="row">
+                <div class="col-12 text-right">
+
+                    <a href="javascript:void(0)" (click)="ocultarPanelBuscar()">
+                        <i class="fa fa-window-close icon-close" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search icon-search" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Buscar héroe" aria-label="Username" aria-describedby="basic-addon1" (keyup.enter)="buscarHeroe(nbuscarTexto.value)" #nbuscarTexto>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-block" (click)="buscarHeroe(nbuscarTexto.value)">BUSCAR</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
