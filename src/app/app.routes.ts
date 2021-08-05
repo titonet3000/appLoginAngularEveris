@@ -9,7 +9,7 @@ import { LoginComponent } from "./login/login.component";
 export const AppRoutes: Routes = [
 
     {
-        path: "", component:HomeComponent, 
+        path: "", component:HomeComponent, canActivate: [AuthGuard],
         children: [
 
             { path: "", component: BienvenidoComponent }, 
