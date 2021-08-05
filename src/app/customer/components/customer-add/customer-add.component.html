@@ -1,0 +1,24 @@
+<form class="row g-3" name="form" (ngSubmit)="f.form.valid && acceso()" #f="ngForm" novalidate style="padding: 1.5rem;">
+    <div class="col-md-6">
+        <label for="CODIGO" class="form-label">Código</label>
+        <input type="text" id="CODIGO" name="CODIGO" class="form-control" placeholder="Ingrese Código: "
+        [(ngModel)]="customer.CODIGO" required>
+      </div>   
+    <div class="col-md-6">
+      <label for="FIRSTNAME" class="form-label">Nombres: </label>
+      <input type="text" id="FIRSTNAME" name="FIRSTNAME" class="form-control" placeholder="Ingrese Nombres: "
+      [(ngModel)]="customer.FIRSTNAME" required>
+    </div>
+    <div class="col-md-6">
+      <label for="LASTNAME" class="form-label">Address 2</label>
+      <input type="text" id="LASTNAME" name="LASTNAME" class="form-control" placeholder="Ingrese Apellidos: "
+      [(ngModel)]="customer.LASTNAME" required>
+    </div>
+
+    <div class="col-12" style="padding-top: 1.5rem; text-align: right;">   
+    <button type="submit"
+    [class]="f.form.valid ? 'btn btn-lg btn-primary':'btn btn-lg btn-primary_disabled'"
+    [disabled]="!f.form.valid">Agrega Clientes</button>
+</div>
+  </form>
+

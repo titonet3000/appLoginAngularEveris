@@ -1,0 +1,21 @@
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CÓDIGO</th>
+        <th scope="col">NOMBRES</th>
+        <th scope="col">APELLIDOS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of listCustomer; let index = index;">
+        <th scope="row">{{index + 1}}</th>
+        <td>{{customer.CODIGO}}</td>
+        <td>{{customer.FIRSTNAME}}</td>
+        <td>{{customer.LASTNAME}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
