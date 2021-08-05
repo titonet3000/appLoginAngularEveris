@@ -1,0 +1,30 @@
+@import '../../../../sass/_variables';
+@import '../../../../sass/_mixins';
+.form-signin {
+    @include text-align($text-align-center);
+    width: $max;
+    max-width: $max-width-login;
+    padding-top: $padding-top-login;
+    margin: $auto;
+    & .form-control {
+        height: $auto;
+        padding: $padding-form-Login;
+        margin-top: $margin-top-form-login;
+    }
+}
+
+.btn-primary {
+    color: $blanco;
+    background-color: $color-principal;
+    border-color: $color-principal;
+    &:hover {
+        color: $color-principal;
+        background-color: $blanco
+    }
+}
+
+.btn-primary_disabled {
+    color: $border-btn-disabled;
+    background-color: $fondo-btn-disabled;
+    border-color: $border-btn-disabled;
+}
